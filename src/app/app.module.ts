@@ -3,6 +3,7 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { ConfigService } from "./services/config.services";
 
 @NgModule({
     bootstrap: [
@@ -14,6 +15,9 @@ import { AppComponent } from "./app.component";
     ],
     declarations: [
         AppComponent
+    ],
+    providers:[
+        ConfigService
     ],
     schemas: [
         NO_ERRORS_SCHEMA

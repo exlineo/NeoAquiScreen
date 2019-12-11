@@ -1,7 +1,9 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" actionBarHidden="true">
 
-    <GridLayout rows="*">
-        <WebView row="0" loaded="onWebViewLoaded" id="myWebView" [src]="webViewSrc"></WebView>
+    <GridLayout rows="*, auto, *">
+        <Label row="1" text="NeoAquitania"></Label>
+        <Label row="1" text=""></Label>
+        <Button text="&#xf013;" row="2" (tap)="onTapSettings()" class="btn btnnu far fapetit"></Button>
     </GridLayout>
 
 </Page>
