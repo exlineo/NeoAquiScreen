@@ -5,6 +5,7 @@ import * as dialogs from "tns-core-modules/ui/dialogs";
 import { WebView, LoadEventData } from "tns-core-modules/ui/web-view";
 import { ConfigService } from "../services/config.services";
 import { Router } from "@angular/router";
+import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
     selector: "Home",
@@ -15,7 +16,8 @@ export class HomeComponent implements OnInit {
     constructor(
         private page:Page,
         public configServ:ConfigService,
-        private route:Router) {
+        private route:Router,
+        private routerExtensions: RouterExtensions) {
     }
 
     ngOnInit(): void {
@@ -41,6 +43,6 @@ export class HomeComponent implements OnInit {
      * @param args Evénement transféré par le système
      */
     onTap() {
-        this.route.navigate(['/ecran']);
+        this.routerExtensions.navigate(['/ecran'], { clearHistory: true });
     }
 }
