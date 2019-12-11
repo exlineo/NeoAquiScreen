@@ -36,6 +36,9 @@ export class ConfigService {
      */
     setConfig(u:string="http://www.exlineo.com") {
         console.log("fichier", this.file);
+        if(u.indexOf('http') == -1){
+            u = 'http://'+u;
+        }
         this.file.writeText(u)
             .then((result) => {
                 this.litConfig();

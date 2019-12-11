@@ -4,17 +4,18 @@ import { Page } from "tns-core-modules/ui/page";
 import * as dialogs from "tns-core-modules/ui/dialogs";
 import { WebView, LoadEventData } from "tns-core-modules/ui/web-view";
 import { ConfigService } from "../services/config.services";
+import { Router } from "@angular/router";
 
 @Component({
     selector: "Home",
     templateUrl: "./home.component.html"
 })
 export class HomeComponent implements OnInit {
-    
-    webViewSrc:string;
 
-    constructor(private page:Page, public configServ:ConfigService) {
-        this.webViewSrc = 'http://www.exlineo.com';
+    constructor(
+        private page:Page,
+        public configServ:ConfigService,
+        private route:Router) {
     }
 
     ngOnInit(): void {
@@ -34,5 +35,12 @@ export class HomeComponent implements OnInit {
             this.configServ.setConfig(r.text);
             console.log("Dialog result: " + r.result + ", text: " + r.text);
         });
+    }
+    /**
+     * Clic sur le bouton de validation pour aller à la page d'accueil
+     * @param args Evénement transféré par le système
+     */
+    onTap() {
+        this.route.navigate(['/ecran']);
     }
 }

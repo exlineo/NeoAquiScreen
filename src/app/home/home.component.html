@@ -1,9 +1,13 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" actionBarHidden="true">
 
-    <GridLayout rows="*, auto, *">
-        <Label row="1" text="NeoAquitania"></Label>
-        <Label row="1" text=""></Label>
-        <Button text="&#xf013;" row="2" (tap)="onTapSettings()" class="btn btnnu far fapetit"></Button>
+    <GridLayout rows="*, *, auto" columns="150, *, 150" backgroundColor="orangered">
+        <StackLayout row="1" colSpan="3">
+            <Label text="NeoAquitania" class="h1"></Label>
+            <Label text="Paramètre du réseau local :" class="h4"></Label>
+            <Label [text]="configServ.url" class="h4"></Label>
+        </StackLayout>
+        <Button row="2" col="1" text="&#xf058;" (tap)="onTap($event)" class="btn fapetit far"></Button>
+        <Button row="2" col="2" text="&#xf013;" (tap)="onTapSettings()" class="btn btnnu far fapetit"></Button>
     </GridLayout>
 
 </Page>

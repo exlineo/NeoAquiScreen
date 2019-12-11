@@ -28,6 +28,10 @@ ListView,
     color: white;
 }
 
+input {
+    border: rbga(255, 255, 255, .5) solid white;
+}
+
 .h1 {
     font-size: 60;
     margin: 5;
